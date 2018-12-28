@@ -389,7 +389,7 @@ static bool tx2_uncore_validate_event_group(struct perf_event *event)
 	if (!tx2_uncore_validate_event(event->pmu, leader, &counters))
 		return false;
 
-	for_each_sibling_event(sibling, leader) {
+	list_for_each_entry(sibling, &leader->sibling_list, group_entry) {
 		if (!tx2_uncore_validate_event(event->pmu, sibling, &counters))
 			return false;
 	}
