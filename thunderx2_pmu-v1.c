@@ -521,7 +521,7 @@ static void tx2_uncore_event_del(struct perf_event *event, int flags)
 	/* clear the assigned counter */
 	free_counter(tx2_pmu, GET_COUNTERID(event));
 
-	perf_event_update_userpage(event);
+	perf_event_update_userpage_local(event);
 	tx2_pmu->events[hwc->idx] = NULL;
 	hwc->idx = -1;
 }

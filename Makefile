@@ -1,3 +1,4 @@
+SHELL := /bin/bash
 VERSION=
 obj-m +=  thunderx2_pmu${VERSION}.o
 DIR=$(PWD)
